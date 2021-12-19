@@ -1,0 +1,33 @@
+name: Auto Deploy hugo
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install Hugo
+      run: |
+        wget -nv https://github.com/gohugoio/hugo/releases/download/v0.90.1/hugo_extended_0.90.1_Linux-64bit.tar.gz -O hugo.tar.gz
+        mkdir $HOME/hugo
+        tar -zxvf hugo.tar.gz -C $HOME/hugo
+        export PATH=$HOME/hugo:$PATH
+
+    - name: Pull Themes & Build
+      run: |
+        git clone https://github.com/dillonzq/LoveIt.git ./themes/LoveIt
+        hugo
+        ls -l public/
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # secret 中设置好私钥
+        external_repository: NEUQer-Tech/neuqer-tech.github.io # Page 仓库
+        publish_branch: main  # Page 仓库的分支
+        publish_dir: ./public # 静态网页路径
+        commit_message: ${{ github.event.head_commit.message }}
+
