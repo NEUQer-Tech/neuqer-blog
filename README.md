@@ -1,13 +1,3 @@
----
-title: "如何在公共博客上新增文章"
-date: 2021-12-19T18:28:34+08:00
-author: 朱坤帅
-authorLink: https://github.com/JooKS-me
-tags: ["入门教学","Hugo"]
-categories: ["入门教学"]
-draft: false
-
----
 
 ### 一、安装Hugo
 
@@ -23,7 +13,7 @@ Hugo的安装非常简单，如果你是MacOS，只需要输入 `brew install hu
 
 如下图，点击右上角的fork即可，最好点一下star和watch，防止迷路。
 
-![How-to-fork](/images/How-to-fork.png)
+![How-to-fork](https://neuqer-tech.github.io/images/How-to-fork.png)
 
 ### 三、克隆仓库
 
@@ -36,7 +26,7 @@ git clone git@github.com:xxxxx/neuqer-blog.git
 git clone https://github.com/dillonzq/LoveIt.git ./themes/LoveIt
 ```
 
-![How-to-Clone](/images/How-to-Clone.png)
+![How-to-Clone](https://neuqer-tech.github.io/images/How-to-Clone.png)
 
 ### 四、新增文章
 
@@ -58,7 +48,7 @@ hugo new posts/{题目}.md
 
 用编辑器打开文章，比如 `Typora` 就挺好用。
 
-![Head-Config](/images/Head-Config.png)
+![Head-Config](https://neuqer-tech.github.io/images/Head-Config.png)
 
 你会看到开头有这样一块东西，这里我们需要修改一下。
 
