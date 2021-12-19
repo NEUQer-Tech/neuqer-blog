@@ -14,10 +14,10 @@ jobs:
         wget -nv https://github.com/gohugoio/hugo/releases/download/v0.90.1/hugo_extended_0.90.1_Linux-64bit.tar.gz -O hugo.tar.gz
         mkdir $HOME/hugo
         tar -zxvf hugo.tar.gz -C $HOME/hugo
-        export PATH=$HOME/hugo:$PATH
 
     - name: Pull Themes & Build
       run: |
+        export PATH=$HOME/hugo:$PATH
         git clone https://github.com/dillonzq/LoveIt.git ./themes/LoveIt
         hugo
         ls -l public/
