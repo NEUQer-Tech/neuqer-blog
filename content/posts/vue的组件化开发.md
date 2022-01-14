@@ -72,7 +72,7 @@ app2不能使用cpn
 Vue实例也可以看作是一个组件（root组件），也可以将vue组件看作其他组件的父组件
 
 ~~~javascript
-//第一个组件构造器（子组件）
+		//第一个组件构造器（子组件）
          const cpnC1  = Vue.extend({
              template: '<div><h2>标题</h2><h4>内容1</h4></div>',
          })
@@ -192,8 +192,9 @@ btnClick(item){
 
 ~~~html
 <div id="app">              
-    <cpn v-on:itemclick="cpnclick"></cpn>        
-    <!-- cpnclick是在父组件中的（itemClick不能写驼峰） -->        
+    <cpn v-on:itemclick="cpnclick"></cpn>
+    <!--@itemclick也可以，差别是@itemclick未传参时会传event，（itemClick不能写驼峰）-->
+    <!-- cpnclick是在父组件中的 -->        
     <!-- 在子组件中通过$emit()来触发事件        
 	在父组件中通过v-on来监听子组件事件 -->
 </div>
