@@ -2,7 +2,7 @@
 title: "Vue的组件式开发"
 date: 2021-12-19T18:28:34+08:00
 author: 周卿玉
-authorLink: https://github.com/JooKS-me
+authorLink:https://github.com/HCl0227
 tags: ["技术分享","Vue"]
 categories: ["前端技术分享"]
 draft: false
