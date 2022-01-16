@@ -101,7 +101,7 @@ set optimizer_switch='mrr=on';
 select @@read_rnd_buffer_size;
 set read_rnd_buffer_size = xxx
 MRR 在本质上是一种用空间换时间的算法。MySQL 不可能给你无限的内存来进行排序，如果 read_rnd_buffer 满了，就会先把满了的 rowid 排好序去磁盘读取，接着清空，然后再往里面继续放 rowid，直到 read_rnd_buffer 又达到 read_rnd_buffe 配置的上限，如此循环。```
-
+```
 
 
 ### 唯一索引
