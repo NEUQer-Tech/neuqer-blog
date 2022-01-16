@@ -100,7 +100,7 @@ set optimizer_switch='mrr=on';
 ```sql
 select @@read_rnd_buffer_size;
 set read_rnd_buffer_size = xxx
-```
+MRR 在本质上是一种用空间换时间的算法。MySQL 不可能给你无限的内存来进行排序，如果 read_rnd_buffer 满了，就会先把满了的 rowid 排好序去磁盘读取，接着清空，然后再往里面继续放 rowid，直到 read_rnd_buffer 又达到 read_rnd_buffe 配置的上限，如此循环。```
 
 
 
@@ -120,15 +120,28 @@ set read_rnd_buffer_size = xxx
 
 insert ignore会忽略数据库中已经存在的数据(根据主键或者唯一索引判断)，如果数据库没有数据，就插入新的数据，如果有数据的话就跳过这条数据.
 
+```sql
+insert ignore into table(xx) values(xx);
+```
+
 **2.使用replace into语句**
 
 replace into 首先尝试插入数据到表中。 如果发现表中已经有此行数据(根据主键或者唯一索引判断)则先删除此行数据，然后插入新的数据，否则，直接插入新数据。
 
+```sql
+replace into table(xx) values(xx);
+```
+
 **3.使用insert on duplicate key update语句**
 
 如果在insert into 语句末尾指定了on duplicate key update，并且插入行后会导致在一个UNIQUE索引或PRIMARY KEY中出现重复值，则在出现重复值的行执行UPDATE；如果不会导致重复的问题，则插入新行，跟普通的insert into一样。
-2、3的区别在于，2在原数据上进行修改，3先删除再插入新的值，如果存在自增id，那么自增id会改变。
 
+```sql
+insert into table(xxx) values(xxx) on
+duplicate key update xxx=VALUES(xxx);
+```
+
+2、3的区别在于，3在原数据上进行修改，2先删除再插入新的值，如果存在自增id，那么自增id会改变。
 
 
 ### 主键索引
