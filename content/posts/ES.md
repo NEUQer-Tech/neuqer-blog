@@ -1,7 +1,7 @@
 ---
 title: "ES"
 date: 2022-02-13T18:54:43+08:00
-draft: false
+author: 姚辉
 authorLink: https://github.com/Henrik-Yao
 tags: ["技术分享","ES"]
 categories: ["ES"]
