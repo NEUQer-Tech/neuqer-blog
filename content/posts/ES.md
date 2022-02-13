@@ -1,5 +1,5 @@
 ---
-title: "ES"
+title: "ES由浅入深"
 date: 2022-02-13T18:54:43+08:00
 author: 姚辉
 authorLink: https://github.com/Henrik-Yao
@@ -8,7 +8,7 @@ categories: ["ES"]
 draft: false
 ---
 
-@[TOC]
+
 ## 一.elasticsearch简介
 
 > **Elasticsearch**是一个基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于**RESTful web**接口。Elasticsearch是用Java语言开发的，并作为Apache许可条款下的开放源码发布，是一种流行的企业级搜索引擎。Elasticsearch用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。
