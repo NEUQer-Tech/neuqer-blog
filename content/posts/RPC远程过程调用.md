@@ -1,7 +1,7 @@
 ---
 title: "RPC远程过程调用"
 date: 2022-03-06T18:40:55+08:00
-author: LongyimHung
+author: 洪龙研
 authorLink: https://github.com/AbnerHung
 draft: false
 categories: ["技术分享","RPC"]
